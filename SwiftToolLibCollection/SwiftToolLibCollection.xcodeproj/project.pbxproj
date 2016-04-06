@@ -11,6 +11,7 @@
 		DEB34AE91CB4B3D800ECF99E /* SwiftToolLibCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB34ADE1CB4B3D800ECF99E /* SwiftToolLibCollection.framework */; };
 		DEB34AEE1CB4B3D800ECF99E /* SwiftToolLibCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB34AED1CB4B3D800ECF99E /* SwiftToolLibCollectionTests.swift */; };
 		DEB34AFA1CB4B42100ECF99E /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB34AF91CB4B42100ECF99E /* Async.swift */; };
+		DEEB46371CB4F896007DCD65 /* PathKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB46361CB4F896007DCD65 /* PathKit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		DEB34AED1CB4B3D800ECF99E /* SwiftToolLibCollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftToolLibCollectionTests.swift; sourceTree = "<group>"; };
 		DEB34AEF1CB4B3D800ECF99E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEB34AF91CB4B42100ECF99E /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
+		DEEB46361CB4F896007DCD65 /* PathKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathKit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 		DEB34AE01CB4B3D800ECF99E /* SwiftToolLibCollection */ = {
 			isa = PBXGroup;
 			children = (
+				DEEB46351CB4F80D007DCD65 /* PathKit */,
 				DEB34AF81CB4B40E00ECF99E /* Async-GCD */,
 				DEB34AE11CB4B3D800ECF99E /* SwiftToolLibCollection.h */,
 				DEB34AE31CB4B3D800ECF99E /* Info.plist */,
@@ -95,6 +98,14 @@
 				DEB34AF91CB4B42100ECF99E /* Async.swift */,
 			);
 			path = "Async-GCD";
+			sourceTree = "<group>";
+		};
+		DEEB46351CB4F80D007DCD65 /* PathKit */ = {
+			isa = PBXGroup;
+			children = (
+				DEEB46361CB4F896007DCD65 /* PathKit.swift */,
+			);
+			path = PathKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -206,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DEB34AFA1CB4B42100ECF99E /* Async.swift in Sources */,
+				DEEB46371CB4F896007DCD65 /* PathKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +403,7 @@
 				DEB34AF41CB4B3D800ECF99E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DEB34AF51CB4B3D800ECF99E /* Build configuration list for PBXNativeTarget "SwiftToolLibCollectionTests" */ = {
 			isa = XCConfigurationList;
@@ -399,6 +412,7 @@
 				DEB34AF71CB4B3D800ECF99E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
