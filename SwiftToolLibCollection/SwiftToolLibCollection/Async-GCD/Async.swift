@@ -43,6 +43,61 @@ private struct GCD {
 }
 
 // MARK: - Async - Struct
+/**
+The **Async** struct is the main part of the Async.framework. Handles a internally `dispatch_block_t`.
+
+Chainable dispatch blocks with GCD:
+
+Async.background {
+// Run on background queue
+}.main {
+// Run on main queue, after the previous block
+}
+
+All moderns queue classes:
+
+Async.main {}
+Async.userInteractive {}
+Async.userInitiated {}
+Async.utility {}
+Async.background {}
+
+Custom queues:
+
+let customQueue = dispatch_queue_create("Label", DISPATCH_QUEUE_CONCURRENT)
+Async.customQueue(customQueue) {}
+
+Dispatch block after delay:
+
+let seconds = 0.5
+Async.main(after: seconds) {}
+
+Cancel blocks not yet dispatched
+
+let block1 = Async.background {
+// Some work
+}
+let block2 = block1.background {
+// Some other work
+}
+Async.main {
+// Cancel async to allow block1 to begin
+block1.cancel() // First block is NOT cancelled
+block2.cancel() // Second block IS cancelled
+}
+
+Wait for block to finish:
+
+let block = Async.background {
+// Do stuff
+}
+// Do other stuff
+// Wait for "Do stuff" to finish
+block.wait()
+// Do rest of stuff
+
+- SeeAlso: Grand Central Dispatch
+*/
 public struct Async {
     // MARK: - Private properties and init
     private let block: dispatch_block_t
@@ -133,6 +188,25 @@ public struct Async {
     }
     
     // MARK: - Instance methods
+    /**
+    Convenience function to call `dispatch_block_cancel()` on the encapsulated block.
+    Cancels the current block, if it hasn't already begun running to GCD.
+    
+    Usage:
+    
+    let block1 = Async.background {
+    // Some work
+    }
+    let block2 = block1.background {
+    // Some other work
+    }
+    Async.main {
+    // Cancel async to allow block1 to begin
+    block1.cancel() // First block is NOT cancelled
+    block2.cancel() // Second block IS cancelled
+    }
+    
+    */
     public func cancel() {
         dispatch_block_cancel(block)
     }
@@ -181,6 +255,23 @@ public struct Async {
 }
 
 // MARK: - Apply - DSL For 'dispath_apply'
+/**
+`Apply` is an empty struct with convenience static functions to parallelize a for-loop, as provided by `dispatch_apply`.
+
+Apply.background(100) { i in
+// Calls blocks in parallel
+}
+
+`Apply` runs a block multiple times, before returning. If you want run the block asynchronously from the current thread, wrap it in an `Async` block:
+
+Async.background {
+Apply.background(100) { i in
+// Calls blocks in parallel asynchronously
+}
+}
+
+- SeeAlso: Grand Central Dispatch, dispatch_apply
+*/
 public struct Apply {
     /*
         Block is run any given amount of times on a queue with a quality of service of QOS_CLASS_USER_INTERACTIVE. The block is being passed an index parameter.
@@ -207,6 +298,48 @@ public struct Apply {
 }
 
 // MARK: - Group 
+/**
+The **AsyncGroup** struct facilitates working with groups of asynchronous blocks. Handles a internally `dispatch_group_t`.
+
+Multiple dispatch blocks with GCD:
+
+let group = AsyncGroup()
+group.background {
+// Run on background queue
+}
+group.utility {
+// Run on untility queue, after the previous block
+}
+group.wait()
+
+All moderns queue classes:
+
+group.main {}
+group.userInteractive {}
+group.userInitiated {}
+group.utility {}
+group.background {}
+
+Custom queues:
+
+let customQueue = dispatch_queue_create("Label", DISPATCH_QUEUE_CONCURRENT)
+group.customQueue(customQueue) {}
+
+Wait for group to finish:
+
+let group = AsyncGroup()
+group.background {
+// Do stuff
+}
+group.background {
+// Do other stuff in parallel
+}
+// Wait for both to finish
+group.wait()
+// Do rest of stuff
+
+- SeeAlso: Grand Central Dispatch
+*/
 public struct AsyncGroup {
     // MARK: - Private properties and init
     var group: dispatch_group_t
