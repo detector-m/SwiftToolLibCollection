@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		DE1C7AD31CB5F803001CBEE2 /* RateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7AD21CB5F803001CBEE2 /* RateLimit.swift */; };
 		DE1C7AD51CB5FC01001CBEE2 /* PersistentRateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7AD41CB5FC01001CBEE2 /* PersistentRateLimit.swift */; };
+		DE1C7AD81CB60090001CBEE2 /* ExcuteDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7AD71CB60090001CBEE2 /* ExcuteDuration.swift */; };
 		DEB34AE21CB4B3D800ECF99E /* SwiftToolLibCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = DEB34AE11CB4B3D800ECF99E /* SwiftToolLibCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DEB34AE91CB4B3D800ECF99E /* SwiftToolLibCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB34ADE1CB4B3D800ECF99E /* SwiftToolLibCollection.framework */; };
 		DEB34AEE1CB4B3D800ECF99E /* SwiftToolLibCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB34AED1CB4B3D800ECF99E /* SwiftToolLibCollectionTests.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		DE1C7AD21CB5F803001CBEE2 /* RateLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateLimit.swift; sourceTree = "<group>"; };
 		DE1C7AD41CB5FC01001CBEE2 /* PersistentRateLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentRateLimit.swift; sourceTree = "<group>"; };
+		DE1C7AD71CB60090001CBEE2 /* ExcuteDuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcuteDuration.swift; sourceTree = "<group>"; };
 		DEB34ADE1CB4B3D800ECF99E /* SwiftToolLibCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftToolLibCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB34AE11CB4B3D800ECF99E /* SwiftToolLibCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftToolLibCollection.h; sourceTree = "<group>"; };
 		DEB34AE31CB4B3D800ECF99E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +69,14 @@
 			path = RateLimit;
 			sourceTree = "<group>";
 		};
+		DE1C7AD61CB6007E001CBEE2 /* ExcuteDuration */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C7AD71CB60090001CBEE2 /* ExcuteDuration.swift */,
+			);
+			path = ExcuteDuration;
+			sourceTree = "<group>";
+		};
 		DEB34AD41CB4B3D800ECF99E = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +98,7 @@
 		DEB34AE01CB4B3D800ECF99E /* SwiftToolLibCollection */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C7AD61CB6007E001CBEE2 /* ExcuteDuration */,
 				DE1C7AD11CB5F7C3001CBEE2 /* RateLimit */,
 				DEEB46351CB4F80D007DCD65 /* PathKit */,
 				DEB34AF81CB4B40E00ECF99E /* Async-GCD */,
@@ -231,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE1C7AD51CB5FC01001CBEE2 /* PersistentRateLimit.swift in Sources */,
+				DE1C7AD81CB60090001CBEE2 /* ExcuteDuration.swift in Sources */,
 				DE1C7AD31CB5F803001CBEE2 /* RateLimit.swift in Sources */,
 				DEB34AFA1CB4B42100ECF99E /* Async.swift in Sources */,
 				DEEB46371CB4F896007DCD65 /* PathKit.swift in Sources */,
