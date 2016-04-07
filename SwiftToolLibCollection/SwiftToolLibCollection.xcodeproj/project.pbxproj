@@ -10,6 +10,13 @@
 		DE1C7AD31CB5F803001CBEE2 /* RateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7AD21CB5F803001CBEE2 /* RateLimit.swift */; };
 		DE1C7AD51CB5FC01001CBEE2 /* PersistentRateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7AD41CB5FC01001CBEE2 /* PersistentRateLimit.swift */; };
 		DE1C7AD81CB60090001CBEE2 /* ExcuteDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7AD71CB60090001CBEE2 /* ExcuteDuration.swift */; };
+		DE1C7ADB1CB639FF001CBEE2 /* Warehousable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7ADA1CB639FF001CBEE2 /* Warehousable.swift */; };
+		DE1C7ADD1CB63CA4001CBEE2 /* Storable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7ADC1CB63CA4001CBEE2 /* Storable.swift */; };
+		DE1C7ADF1CB64246001CBEE2 /* Mirror+Serialization.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7ADE1CB64246001CBEE2 /* Mirror+Serialization.swift */; };
+		DE1C7AE11CB64B67001CBEE2 /* WarehouseCacheable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7AE01CB64B67001CBEE2 /* WarehouseCacheable.swift */; };
+		DE1C7AE31CB64BD7001CBEE2 /* MemoryWarehouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7AE21CB64BD7001CBEE2 /* MemoryWarehouse.swift */; };
+		DE1C7AE51CB652B1001CBEE2 /* JSONWarehouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7AE41CB652B1001CBEE2 /* JSONWarehouse.swift */; };
+		DE1C7AE71CB65BD8001CBEE2 /* Pantry.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7AE61CB65BD8001CBEE2 /* Pantry.swift */; };
 		DEB34AE21CB4B3D800ECF99E /* SwiftToolLibCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = DEB34AE11CB4B3D800ECF99E /* SwiftToolLibCollection.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DEB34AE91CB4B3D800ECF99E /* SwiftToolLibCollection.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEB34ADE1CB4B3D800ECF99E /* SwiftToolLibCollection.framework */; };
 		DEB34AEE1CB4B3D800ECF99E /* SwiftToolLibCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB34AED1CB4B3D800ECF99E /* SwiftToolLibCollectionTests.swift */; };
@@ -31,6 +38,13 @@
 		DE1C7AD21CB5F803001CBEE2 /* RateLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateLimit.swift; sourceTree = "<group>"; };
 		DE1C7AD41CB5FC01001CBEE2 /* PersistentRateLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentRateLimit.swift; sourceTree = "<group>"; };
 		DE1C7AD71CB60090001CBEE2 /* ExcuteDuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcuteDuration.swift; sourceTree = "<group>"; };
+		DE1C7ADA1CB639FF001CBEE2 /* Warehousable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Warehousable.swift; sourceTree = "<group>"; };
+		DE1C7ADC1CB63CA4001CBEE2 /* Storable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storable.swift; sourceTree = "<group>"; };
+		DE1C7ADE1CB64246001CBEE2 /* Mirror+Serialization.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Mirror+Serialization.swift"; sourceTree = "<group>"; };
+		DE1C7AE01CB64B67001CBEE2 /* WarehouseCacheable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WarehouseCacheable.swift; sourceTree = "<group>"; };
+		DE1C7AE21CB64BD7001CBEE2 /* MemoryWarehouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryWarehouse.swift; sourceTree = "<group>"; };
+		DE1C7AE41CB652B1001CBEE2 /* JSONWarehouse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONWarehouse.swift; sourceTree = "<group>"; };
+		DE1C7AE61CB65BD8001CBEE2 /* Pantry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pantry.swift; sourceTree = "<group>"; };
 		DEB34ADE1CB4B3D800ECF99E /* SwiftToolLibCollection.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftToolLibCollection.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEB34AE11CB4B3D800ECF99E /* SwiftToolLibCollection.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwiftToolLibCollection.h; sourceTree = "<group>"; };
 		DEB34AE31CB4B3D800ECF99E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -77,6 +91,20 @@
 			path = ExcuteDuration;
 			sourceTree = "<group>";
 		};
+		DE1C7AD91CB6390E001CBEE2 /* Pantry */ = {
+			isa = PBXGroup;
+			children = (
+				DE1C7ADC1CB63CA4001CBEE2 /* Storable.swift */,
+				DE1C7ADA1CB639FF001CBEE2 /* Warehousable.swift */,
+				DE1C7AE01CB64B67001CBEE2 /* WarehouseCacheable.swift */,
+				DE1C7ADE1CB64246001CBEE2 /* Mirror+Serialization.swift */,
+				DE1C7AE21CB64BD7001CBEE2 /* MemoryWarehouse.swift */,
+				DE1C7AE41CB652B1001CBEE2 /* JSONWarehouse.swift */,
+				DE1C7AE61CB65BD8001CBEE2 /* Pantry.swift */,
+			);
+			path = Pantry;
+			sourceTree = "<group>";
+		};
 		DEB34AD41CB4B3D800ECF99E = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +126,7 @@
 		DEB34AE01CB4B3D800ECF99E /* SwiftToolLibCollection */ = {
 			isa = PBXGroup;
 			children = (
+				DE1C7AD91CB6390E001CBEE2 /* Pantry */,
 				DE1C7AD61CB6007E001CBEE2 /* ExcuteDuration */,
 				DE1C7AD11CB5F7C3001CBEE2 /* RateLimit */,
 				DEEB46351CB4F80D007DCD65 /* PathKit */,
@@ -242,8 +271,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE1C7AD51CB5FC01001CBEE2 /* PersistentRateLimit.swift in Sources */,
+				DE1C7ADF1CB64246001CBEE2 /* Mirror+Serialization.swift in Sources */,
+				DE1C7ADD1CB63CA4001CBEE2 /* Storable.swift in Sources */,
+				DE1C7ADB1CB639FF001CBEE2 /* Warehousable.swift in Sources */,
+				DE1C7AE31CB64BD7001CBEE2 /* MemoryWarehouse.swift in Sources */,
+				DE1C7AE51CB652B1001CBEE2 /* JSONWarehouse.swift in Sources */,
 				DE1C7AD81CB60090001CBEE2 /* ExcuteDuration.swift in Sources */,
+				DE1C7AE11CB64B67001CBEE2 /* WarehouseCacheable.swift in Sources */,
 				DE1C7AD31CB5F803001CBEE2 /* RateLimit.swift in Sources */,
+				DE1C7AE71CB65BD8001CBEE2 /* Pantry.swift in Sources */,
 				DEB34AFA1CB4B42100ECF99E /* Async.swift in Sources */,
 				DEEB46371CB4F896007DCD65 /* PathKit.swift in Sources */,
 			);
