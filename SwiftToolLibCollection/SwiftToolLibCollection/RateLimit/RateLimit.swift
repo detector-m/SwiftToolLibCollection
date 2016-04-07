@@ -8,6 +8,10 @@
 
 import Foundation
 
+/*
+    RateLimit.execute(name: "Example", limit: 1) {
+    }
+*/
 public class RateLimit {
     public class func execute(name name: String, limit: NSTimeInterval, @noescape block: Void -> ()) -> Bool {
         if sholudExecute(name: name, limit: limit) {
