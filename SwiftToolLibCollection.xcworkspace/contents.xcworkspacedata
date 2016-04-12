@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:SwifterServer/SwifterServer.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:SwiftToolLibCollection/SwiftToolLibCollection.xcodeproj">
    </FileRef>
 </Workspace>
