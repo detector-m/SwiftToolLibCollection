@@ -25,6 +25,10 @@
 		DE2DAB0B1CC62DB2007409D1 /* Net.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB0A1CC62DB2007409D1 /* Net.swift */; };
 		DE2DAB0D1CC6319D007409D1 /* NetTCP.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB0C1CC6319D007409D1 /* NetTCP.swift */; };
 		DE2DAB0F1CC66759007409D1 /* LibEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB0E1CC66759007409D1 /* LibEvent.swift */; };
+		DE2DAB111CC76FD6007409D1 /* NetTCPSSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB101CC76FD6007409D1 /* NetTCPSSL.swift */; };
+		DE2DAB141CC77022007409D1 /* libcrypto-x86_64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2DAB121CC77022007409D1 /* libcrypto-x86_64.a */; };
+		DE2DAB151CC77022007409D1 /* libssl-x86_64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2DAB131CC77022007409D1 /* libssl-x86_64.a */; };
+		DE2DAB171CC77090007409D1 /* NetNamedPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB161CC77090007409D1 /* NetNamedPipe.swift */; };
 		DE4B3B8B1CBE7ADE0024F9A9 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8A1CBE7ADE0024F9A9 /* File.swift */; };
 		DE4B3B8D1CBE82050024F9A9 /* PerfectError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */; };
 		DE4B3B8E1CBE82050024F9A9 /* PerfectError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */; };
@@ -87,6 +91,10 @@
 		DE2DAB0A1CC62DB2007409D1 /* Net.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Net.swift; sourceTree = "<group>"; };
 		DE2DAB0C1CC6319D007409D1 /* NetTCP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetTCP.swift; sourceTree = "<group>"; };
 		DE2DAB0E1CC66759007409D1 /* LibEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibEvent.swift; sourceTree = "<group>"; };
+		DE2DAB101CC76FD6007409D1 /* NetTCPSSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetTCPSSL.swift; sourceTree = "<group>"; };
+		DE2DAB121CC77022007409D1 /* libcrypto-x86_64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcrypto-x86_64.a"; path = "linked/OpenSSL/osx/libcrypto-x86_64.a"; sourceTree = "<group>"; };
+		DE2DAB131CC77022007409D1 /* libssl-x86_64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libssl-x86_64.a"; path = "linked/OpenSSL/osx/libssl-x86_64.a"; sourceTree = "<group>"; };
+		DE2DAB161CC77090007409D1 /* NetNamedPipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetNamedPipe.swift; sourceTree = "<group>"; };
 		DE4B3B8A1CBE7ADE0024F9A9 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectError.swift; sourceTree = "<group>"; };
 		DE4B3B901CBF6F090024F9A9 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
@@ -122,7 +130,9 @@
 				DE2DAAFE1CC0A05E007409D1 /* libicui18n.a in Frameworks */,
 				DE2DAAFF1CC0A05E007409D1 /* libicuuc.a in Frameworks */,
 				DE2DAB031CC0A587007409D1 /* libevent.a in Frameworks */,
+				DE2DAB151CC77022007409D1 /* libssl-x86_64.a in Frameworks */,
 				DEA23EB21CBDEA9200DAA10E /* libcurl.tbd in Frameworks */,
+				DE2DAB141CC77022007409D1 /* libcrypto-x86_64.a in Frameworks */,
 				DE2DAB021CC0A587007409D1 /* libevent_pthreads.a in Frameworks */,
 				DE2DAAFD1CC0A05E007409D1 /* libicudata.a in Frameworks */,
 			);
@@ -234,7 +244,9 @@
 				DEA23EB81CBE192F00DAA10E /* Utilities.swift */,
 				DE2DAB0E1CC66759007409D1 /* LibEvent.swift */,
 				DE2DAB0A1CC62DB2007409D1 /* Net.swift */,
+				DE2DAB161CC77090007409D1 /* NetNamedPipe.swift */,
 				DE2DAB0C1CC6319D007409D1 /* NetTCP.swift */,
+				DE2DAB101CC76FD6007409D1 /* NetTCPSSL.swift */,
 				DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */,
 				DE4B3B901CBF6F090024F9A9 /* LogManager.swift */,
 			);
@@ -253,6 +265,8 @@
 				DEA23EB31CBDEB8600DAA10E /* libcurl.a */,
 				DEA23EB11CBDEA9200DAA10E /* libcurl.tbd */,
 				DEA23EAF1CBDE7E500DAA10E /* libz.tbd */,
+				DE2DAB121CC77022007409D1 /* libcrypto-x86_64.a */,
+				DE2DAB131CC77022007409D1 /* libssl-x86_64.a */,
 			);
 			name = Linked;
 			sourceTree = "<group>";
@@ -432,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE2DAAEF1CBF91A2007409D1 /* Threading.swift in Sources */,
+				DE2DAB111CC76FD6007409D1 /* NetTCPSSL.swift in Sources */,
 				DE4B3B911CBF6F090024F9A9 /* LogManager.swift in Sources */,
 				DEA23EAA1CBDE77C00DAA10E /* Closeable.swift in Sources */,
 				DE2DAAF31CC07825007409D1 /* JSON.swift in Sources */,
@@ -441,6 +456,7 @@
 				DEA23EAC1CBDE77C00DAA10E /* cURL.swift in Sources */,
 				DE4B3B941CBF782A0024F9A9 /* DynamicLoader.swift in Sources */,
 				DE4B3B8D1CBE82050024F9A9 /* PerfectError.swift in Sources */,
+				DE2DAB171CC77090007409D1 /* NetNamedPipe.swift in Sources */,
 				DE2DAB0F1CC66759007409D1 /* LibEvent.swift in Sources */,
 				DEA23EA81CBDE77C00DAA10E /* Bytes.swift in Sources */,
 				DEA23EB91CBE192F00DAA10E /* Utilities.swift in Sources */,
@@ -610,6 +626,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/linked/ICU/osx",
 					"$(PROJECT_DIR)/linked/LibEvent/osx",
+					"$(PROJECT_DIR)/linked/OpenSSL/osx",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.riven.PerfectLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -635,6 +652,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/linked/ICU/osx",
 					"$(PROJECT_DIR)/linked/LibEvent/osx",
+					"$(PROJECT_DIR)/linked/OpenSSL/osx",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.riven.PerfectLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
