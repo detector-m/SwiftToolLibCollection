@@ -29,6 +29,14 @@
 		DE2DAB141CC77022007409D1 /* libcrypto-x86_64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2DAB121CC77022007409D1 /* libcrypto-x86_64.a */; };
 		DE2DAB151CC77022007409D1 /* libssl-x86_64.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2DAB131CC77022007409D1 /* libssl-x86_64.a */; };
 		DE2DAB171CC77090007409D1 /* NetNamedPipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB161CC77090007409D1 /* NetNamedPipe.swift */; };
+		DE2DAB191CC8604E007409D1 /* Mustache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB181CC8604D007409D1 /* Mustache.swift */; };
+		DE2DAB1B1CC86C63007409D1 /* MimeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB1A1CC86C63007409D1 /* MimeType.swift */; };
+		DE2DAB1D1CC86D89007409D1 /* MimeReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB1C1CC86D89007409D1 /* MimeReader.swift */; };
+		DE2DAB1F1CC8B50E007409D1 /* curl_support.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB1E1CC8B50E007409D1 /* curl_support.cpp */; };
+		DE2DAB211CC8B555007409D1 /* util.c in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB201CC8B555007409D1 /* util.c */; };
+		DE2DAB231CC8B6A5007409D1 /* FastCGI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB221CC8B6A5007409D1 /* FastCGI.swift */; };
+		DE2DAB251CC8B6B4007409D1 /* FastCGIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB241CC8B6B4007409D1 /* FastCGIServer.swift */; };
+		DE2DAB271CC8B735007409D1 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB261CC8B735007409D1 /* SQLite.swift */; };
 		DE4B3B8B1CBE7ADE0024F9A9 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8A1CBE7ADE0024F9A9 /* File.swift */; };
 		DE4B3B8D1CBE82050024F9A9 /* PerfectError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */; };
 		DE4B3B8E1CBE82050024F9A9 /* PerfectError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */; };
@@ -95,6 +103,14 @@
 		DE2DAB121CC77022007409D1 /* libcrypto-x86_64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libcrypto-x86_64.a"; path = "linked/OpenSSL/osx/libcrypto-x86_64.a"; sourceTree = "<group>"; };
 		DE2DAB131CC77022007409D1 /* libssl-x86_64.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libssl-x86_64.a"; path = "linked/OpenSSL/osx/libssl-x86_64.a"; sourceTree = "<group>"; };
 		DE2DAB161CC77090007409D1 /* NetNamedPipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetNamedPipe.swift; sourceTree = "<group>"; };
+		DE2DAB181CC8604D007409D1 /* Mustache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Mustache.swift; sourceTree = "<group>"; };
+		DE2DAB1A1CC86C63007409D1 /* MimeType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeType.swift; sourceTree = "<group>"; };
+		DE2DAB1C1CC86D89007409D1 /* MimeReader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MimeReader.swift; sourceTree = "<group>"; };
+		DE2DAB1E1CC8B50E007409D1 /* curl_support.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = curl_support.cpp; path = linked/cURL/curl_support.cpp; sourceTree = SOURCE_ROOT; };
+		DE2DAB201CC8B555007409D1 /* util.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = util.c; sourceTree = "<group>"; };
+		DE2DAB221CC8B6A5007409D1 /* FastCGI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastCGI.swift; sourceTree = "<group>"; };
+		DE2DAB241CC8B6B4007409D1 /* FastCGIServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastCGIServer.swift; sourceTree = "<group>"; };
+		DE2DAB261CC8B735007409D1 /* SQLite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
 		DE4B3B8A1CBE7ADE0024F9A9 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectError.swift; sourceTree = "<group>"; };
 		DE4B3B901CBF6F090024F9A9 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
@@ -229,10 +245,16 @@
 		DEA23EA41CBDE77C00DAA10E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DE2DAB1E1CC8B50E007409D1 /* curl_support.cpp */,
+				DE2DAB201CC8B555007409D1 /* util.c */,
+				DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */,
+				DE4B3B901CBF6F090024F9A9 /* LogManager.swift */,
 				DEA23EA51CBDE77C00DAA10E /* Bytes.swift */,
 				DEA23EA61CBDE77C00DAA10E /* Closeable.swift */,
 				DEA23EA71CBDE77C00DAA10E /* cURL.swift */,
 				DE2DAAF41CC09159007409D1 /* ICU.swift */,
+				DE2DAB221CC8B6A5007409D1 /* FastCGI.swift */,
+				DE2DAB241CC8B6B4007409D1 /* FastCGIServer.swift */,
 				DEA23EB51CBE170300DAA10E /* Dir.swift */,
 				DE4B3B8A1CBE7ADE0024F9A9 /* File.swift */,
 				DE4B3B931CBF782A0024F9A9 /* DynamicLoader.swift */,
@@ -240,15 +262,17 @@
 				DE2DAAF01CBFD336007409D1 /* SysProcess.swift */,
 				DE2DAAF21CC07825007409D1 /* JSON.swift */,
 				DE2DAB081CC10BCE007409D1 /* JSONConvertible.swift */,
+				DE2DAB261CC8B735007409D1 /* SQLite.swift */,
+				DE2DAB181CC8604D007409D1 /* Mustache.swift */,
 				DE2DAB061CC0BE10007409D1 /* Utilities+Server.swift */,
 				DEA23EB81CBE192F00DAA10E /* Utilities.swift */,
 				DE2DAB0E1CC66759007409D1 /* LibEvent.swift */,
+				DE2DAB1A1CC86C63007409D1 /* MimeType.swift */,
+				DE2DAB1C1CC86D89007409D1 /* MimeReader.swift */,
 				DE2DAB0A1CC62DB2007409D1 /* Net.swift */,
 				DE2DAB161CC77090007409D1 /* NetNamedPipe.swift */,
 				DE2DAB0C1CC6319D007409D1 /* NetTCP.swift */,
 				DE2DAB101CC76FD6007409D1 /* NetTCPSSL.swift */,
-				DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */,
-				DE4B3B901CBF6F090024F9A9 /* LogManager.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -446,23 +470,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE2DAAEF1CBF91A2007409D1 /* Threading.swift in Sources */,
+				DE2DAB271CC8B735007409D1 /* SQLite.swift in Sources */,
 				DE2DAB111CC76FD6007409D1 /* NetTCPSSL.swift in Sources */,
 				DE4B3B911CBF6F090024F9A9 /* LogManager.swift in Sources */,
 				DEA23EAA1CBDE77C00DAA10E /* Closeable.swift in Sources */,
 				DE2DAAF31CC07825007409D1 /* JSON.swift in Sources */,
+				DE2DAB1B1CC86C63007409D1 /* MimeType.swift in Sources */,
 				DE2DAB091CC10BCE007409D1 /* JSONConvertible.swift in Sources */,
 				DE4B3B8B1CBE7ADE0024F9A9 /* File.swift in Sources */,
 				DE2DAB0D1CC6319D007409D1 /* NetTCP.swift in Sources */,
 				DEA23EAC1CBDE77C00DAA10E /* cURL.swift in Sources */,
 				DE4B3B941CBF782A0024F9A9 /* DynamicLoader.swift in Sources */,
+				DE2DAB1F1CC8B50E007409D1 /* curl_support.cpp in Sources */,
 				DE4B3B8D1CBE82050024F9A9 /* PerfectError.swift in Sources */,
+				DE2DAB231CC8B6A5007409D1 /* FastCGI.swift in Sources */,
+				DE2DAB191CC8604E007409D1 /* Mustache.swift in Sources */,
 				DE2DAB171CC77090007409D1 /* NetNamedPipe.swift in Sources */,
+				DE2DAB251CC8B6B4007409D1 /* FastCGIServer.swift in Sources */,
 				DE2DAB0F1CC66759007409D1 /* LibEvent.swift in Sources */,
 				DEA23EA81CBDE77C00DAA10E /* Bytes.swift in Sources */,
 				DEA23EB91CBE192F00DAA10E /* Utilities.swift in Sources */,
 				DE2DAB0B1CC62DB2007409D1 /* Net.swift in Sources */,
 				DE2DAAF11CBFD336007409D1 /* SysProcess.swift in Sources */,
+				DE2DAB211CC8B555007409D1 /* util.c in Sources */,
 				DE2DAAF51CC09159007409D1 /* ICU.swift in Sources */,
+				DE2DAB1D1CC86D89007409D1 /* MimeReader.swift in Sources */,
 				DEA23EB61CBE170300DAA10E /* Dir.swift in Sources */,
 				DE2DAB071CC0BE10007409D1 /* Utilities+Server.swift in Sources */,
 			);
