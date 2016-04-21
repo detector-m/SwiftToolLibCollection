@@ -37,6 +37,7 @@
 		DE2DAB231CC8B6A5007409D1 /* FastCGI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB221CC8B6A5007409D1 /* FastCGI.swift */; };
 		DE2DAB251CC8B6B4007409D1 /* FastCGIServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB241CC8B6B4007409D1 /* FastCGIServer.swift */; };
 		DE2DAB271CC8B735007409D1 /* SQLite.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB261CC8B735007409D1 /* SQLite.swift */; };
+		DE2DAB291CC9083E007409D1 /* WebConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB281CC9083E007409D1 /* WebConnection.swift */; };
 		DE4B3B8B1CBE7ADE0024F9A9 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8A1CBE7ADE0024F9A9 /* File.swift */; };
 		DE4B3B8D1CBE82050024F9A9 /* PerfectError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */; };
 		DE4B3B8E1CBE82050024F9A9 /* PerfectError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */; };
@@ -111,6 +112,7 @@
 		DE2DAB221CC8B6A5007409D1 /* FastCGI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastCGI.swift; sourceTree = "<group>"; };
 		DE2DAB241CC8B6B4007409D1 /* FastCGIServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FastCGIServer.swift; sourceTree = "<group>"; };
 		DE2DAB261CC8B735007409D1 /* SQLite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLite.swift; sourceTree = "<group>"; };
+		DE2DAB281CC9083E007409D1 /* WebConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebConnection.swift; sourceTree = "<group>"; };
 		DE4B3B8A1CBE7ADE0024F9A9 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectError.swift; sourceTree = "<group>"; };
 		DE4B3B901CBF6F090024F9A9 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
@@ -273,6 +275,7 @@
 				DE2DAB161CC77090007409D1 /* NetNamedPipe.swift */,
 				DE2DAB0C1CC6319D007409D1 /* NetTCP.swift */,
 				DE2DAB101CC76FD6007409D1 /* NetTCPSSL.swift */,
+				DE2DAB281CC9083E007409D1 /* WebConnection.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -471,6 +474,7 @@
 			files = (
 				DE2DAAEF1CBF91A2007409D1 /* Threading.swift in Sources */,
 				DE2DAB271CC8B735007409D1 /* SQLite.swift in Sources */,
+				DE2DAB291CC9083E007409D1 /* WebConnection.swift in Sources */,
 				DE2DAB111CC76FD6007409D1 /* NetTCPSSL.swift in Sources */,
 				DE4B3B911CBF6F090024F9A9 /* LogManager.swift in Sources */,
 				DEA23EAA1CBDE77C00DAA10E /* Closeable.swift in Sources */,
