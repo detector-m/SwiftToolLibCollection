@@ -99,7 +99,9 @@ public class WebResponse {
     func respond(completion: () -> ()) -> Void {
         self.requestCompletedCallback = {
             [weak self] in
-            self?
+            self?.doSessionHeaders()
+            self?.sendResponse()
+            self?.commitSessions()
             
             completion()
         }
@@ -216,10 +218,25 @@ public class WebResponse {
     
     private func doMainBody() {
         do {
-            return
-        } catch {
-        
+            return try include(request.pathInfo(), local: false)
+        } catch PerfectError.FileError(let code, let msg) {
+            print("File exception \(code) \(msg)")
+            self.setStatus(code == 404 ? Int(code) : 500, message: msg)
+            self.bodyData = [UInt8]("File exception \(code) \(msg)".utf8)
+        } catch MustacheError.SyntaxError(let msg) {
+            print("MustacheError.SyntaxError \(msg)")
+            self.setStatus(500, message: msg)
+            self.bodyData = [UInt8]("Mustache syntax error \(msg)".utf8)
+        } catch MustacheError.EvaluationError(let msg) {
+            
+            print("MustacheError.EvaluationError exception \(msg)")
+            self.setStatus(500, message: msg)
+            self.bodyData = [UInt8]("Mustache evaluation error \(msg)".utf8)
+            
+        } catch let e {
+            print("Unexpected exception \(e)")
         }
+        self.requestCompletedCallback()
     }
     
     func doSessionHeaders() {
@@ -238,6 +255,117 @@ public class WebResponse {
     }
     
     func includeVirtual(path: String) throws {
-        guard let handler = 
+        guard let handler = PageHandlerRegistry.getRequestHandler(self)
+            else {
+                throw PerfectError.FileError(404, "The path \(path) had no associated handler")
+        }
+        handler.handleRequest(self.request, response: self)
     }
+    
+    func include(path: String, local: Bool) throws {
+        var fullPath = path
+        if let decodedPath = path.stringByDecodingURL {
+            fullPath = decodedPath
+        }
+        if !path.hasPrefix("/") {
+            fullPath = makeNonRelative(path, local: local)
+        }
+        fullPath = request.documentRoot + fullPath
+        
+        let file = File(fullPath)
+        if PageHandlerRegistry.hasGlobalHandler() && (!path.hasPrefix("." + mustacheExtension) || !file.exists()) {
+            return try self.includeVirtual(path)
+        }
+        if !path.hasSuffix("." + mustacheExtension) {
+            throw PerfectError.FileError(404, "The file \(path) was not a mustache template file")
+        }
+        
+        do {
+            guard file.exists()
+            else {
+                throw PerfectError.FileError(404, "Not Found")
+            }
+            try file.openRead()
+            defer { file.close() }
+            let bytes = try file.readSomeBytes(file.size())
+            let parser = MustacheParser()
+            let str = UTF8Encoding.encode(bytes)
+            let template = try parser.parse(str)
+            let context = MustacheEvaluationContext(webResponse: self)
+            context.filePath = fullPath
+            
+            let collector = MustacheEvaluationOutputCollector()
+            template.templateName = path
+            
+            try template.evaluatePragmas(context, collector: collector)
+            let fullString = collector.asString()
+            self.bodyData += Array(fullString.utf8)
+        }
+        self.requestCompletedCallback()
+    }
+    
+    private func makeNonRelative(path: String, local: Bool = false) -> String {
+        if includeStatck.count == 0 {
+            return "/" + path
+        }
+        if local {
+            return includeStatck.last!.stringByDeletingLastPathComponent + "/" + path
+        }
+        return request.pathInfo().stringByDeletingLastPathComponent + "/" + path
+    }
+    
+    // WARNING NOTE Using the RWLockCache, even just for read access seems to bring out some sort of bug in the
+    // ARC system. Therefore, this function is not currently called.
+    // !FIX! track this problem down
+    /*
+     func includeCached(path: String, local: Bool = false) throws {
+     
+     if !path.hasSuffix("."+mustacheExtension) {
+     throw PerfectError.FileError(404, "The file \(path) was not a mustache template file")
+     }
+     
+     var fullPath = path
+     if !path.hasPrefix("/") {
+     fullPath = makeNonRelative(path, local: local)
+     }
+     fullPath = request.documentRoot + fullPath
+     
+     do {
+     let file = File(fullPath)
+     guard file.exists() else {
+     throw PerfectError.FileError(404, "Not Found")
+     }
+     let diskModTime = file.modificationTime()
+     var cacheItem = mustacheTemplateCache.valueForKey(fullPath)//, validatorCallback: { (value) -> Bool in
+     //				return diskModTime == value.modificationDate
+     //			})
+     
+     if cacheItem == nil {
+     print("REPLACING")
+     try file.openRead()
+     defer { file.close() }
+     let bytes = try file.readSomeBytes(file.size())
+     
+     let parser = MustacheParser()
+     let str = UTF8Encoding.encode(bytes)
+     let template = try parser.parse(str)
+     cacheItem = MustacheCacheItem(modificationDate: diskModTime, template: template)
+     mustacheTemplateCache.setValueForKey(fullPath, value: cacheItem!)
+     }
+     
+     let template = cacheItem!.template
+     let context = MustacheEvaluationContext(webResponse: self)
+     context.filePath = fullPath
+     
+     let collector = MustacheEvaluationOutputCollector()
+     template.templateName = path
+     
+     try template.evaluatePragmas(context, collector: collector)
+     template.evaluate(context, collector: collector)
+     
+     let fullString = collector.asString()
+     self.bodyData += Array(fullString.utf8)
+     }
+     }
+     */
 }
