@@ -107,10 +107,54 @@ public class WebResponse {
     }
     
     // MARK: - Session
+    /// !FIX! needs to pull key from possible request param
+    func getSessionKey(name: String) -> String {
+        // ...
+        for (cName, cValue) in self.request.cookies {
+            if name == cName {
+                return cValue
+            }
+        }
+        return SessionManager.generateSessionKey()
+    }
+    
+    /// Provides access to the indicated `SessionManager` object.
+    /// If the session does not exist it is created. if it does exist, the existing o bject is returned.
+    public func getSession(named: String) -> SessionManager {
+        if let s = self.sessions[named] {
+            return s
+        }
+        let s = SessionManager(SessionConfiguration(named, id: getSessionKey(perfectSessionNamePrefix + named)))
+        self.sessions[named] = s
+        
+        return s
+    }
+    
+    /// Provides access to the indicated `SessionManager` object using the given `SessionConfiguration` data.
+    /// - throws: If the session already exists, `PerfectError.APIError` is thrown.
+    public func getSession(named: String, withConfiguration: SessionConfiguration) throws -> SessionManager {
+        guard self.sessions[named] == nil
+            else {
+                throw PerfectError.APIError("WebResponse getSession withConfiguration: session was already initialized")
+        }
+        let s = SessionManager(SessionConfiguration(named, id:getSessionKey(perfectSessionNamePrefix + named), copyFrom: withConfiguration))
+        self.sessions[named] = s
+        return s
+    }
+    
+    /// Discards a previously started session. The session will not be propagated and any changes to the session's variables will be discarded.
+    public func abandonSession(named: String) {
+        do {
+            try self.sessions[named]?.abandon()
+        } catch let e {
+            LogManager.logMessage("Exception while abandoning session \(named) \(e)")
+        }
+        self.sessions.removeValueForKey(named)
+    }
     
     // MARK: -
     /// Perform a 302 redirect to the given url
-    public func redirectTo(rul: String) {
+    public func redirectTo(url: String) {
         self.setStatus(302, message: "FOUND")
         self.replaceHeader("Location", value: url)
     }
@@ -126,5 +170,74 @@ public class WebResponse {
             }
         }
         self.addHeader(name, value: value)
+    }
+    
+    // Directly called by the websockets impl
+    func sendResponse() {
+        for (key, value) in headersArray {
+            connection.writeHeaderLine(key + ":" + value)
+        }
+        // cookies
+        if self.cookiesArray.count > 0 {
+            let standardDateFormat = "';expires='E, dd-LLL-yyyy HH:mm:ss 'GMT'"
+            let now = ICU.getNow()
+            for cookie in self.cookiesArray {
+                var cookieLine = "Set-Cookie: "
+                cookieLine.appendContentsOf(cookie.name!.stringByEncodingURL)
+                cookieLine.appendContentsOf("=")
+                cookieLine.appendContentsOf(cookie.value!.stringByEncodingURL)
+                if cookie.expiresIn != 0.0 {
+                    let formattedDate = try! ICU.formatDate(now + ICU.secondsToICUDate(Int(cookie.expiresIn) * 60), format: standardDateFormat, timezone: "GMT")
+                    cookieLine.appendContentsOf(formattedDate)
+                }
+                if let path = cookie.path {
+                    cookieLine.appendContentsOf(";path=" + path)
+                }
+                if let domain = cookie.domain {
+                    cookieLine.appendContentsOf(";domain=" + domain)
+                }
+                if let secure = cookie.secure {
+                    if secure == true {
+                        cookieLine.appendContentsOf(";secure")
+                    }
+                }
+                if let httpOnly = cookie.httpOnly {
+                    if httpOnly == true {
+                        cookieLine.appendContentsOf("; HttpOnly")
+                    }
+                }
+                // etc...
+                connection.writeHeaderLine(cookieLine)
+            }
+        }
+        connection.writeHeaderLine("Content-Length: \(bodyData.count)")
+        connection.writeBodyBytes(bodyData)
+    }
+    
+    private func doMainBody() {
+        do {
+            return
+        } catch {
+        
+        }
+    }
+    
+    func doSessionHeaders() {
+        for (_, session) in self.sessions {
+            session.initializeForResponse(self)
+        }
+    }
+    func commitSessions() {
+        for (name, session) in self.sessions {
+            do {
+                try session.commit()
+            } catch let e {
+                LogManager.logMessage("Exception while committing session \(name) \(e)")
+            }
+        }
+    }
+    
+    func includeVirtual(path: String) throws {
+        guard let handler = 
     }
 }
