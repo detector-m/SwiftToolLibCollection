@@ -204,7 +204,7 @@ public class HTTP2Client {
         return frame
     }
     
-    func dqueueFrame(timeoutSeconds: Double, streamId: UInt32) -> HTTP2Frame? {
+    func dequeueFrame(timeoutSeconds: Double, streamId: UInt32) -> HTTP2Frame? {
         var frame: HTTP2Frame?
         self.frameReadEvent.doWithLock {
             [unowned self] in
@@ -354,7 +354,7 @@ public class HTTP2Client {
         return self.net.fd.isValid
     }
     
-    public func connect(host: String, port: UInt16, ssl: Bool, timeoutSceonds: Double, callback: (Bool) -> Void) {
+    public func connect(host: String, port: UInt16, ssl: Bool, timeoutSeconds: Double, callback: (Bool) -> Void) {
         self.host = host
         self.ssl = ssl
         self.timeoutSeconds = timeoutSeconds
@@ -403,7 +403,138 @@ public class HTTP2Client {
     }
     
     func awaitResponse(streamId: UInt32, request: WebRequest, callback: (WebResponse?, String?) -> ()) {
+        let response = HTTP2WebResponse(request.connection, request: request)
+        var streamOpen = true
+        while streamOpen {
+            let f = self.dequeueFrame(self.timeoutSeconds, streamId: streamId)
+            if let frame = f {
+                switch frame.type {
+                case HTTP2_GOAWAY:
+                    let bytes = Bytes(existingBytes: frame.payload!)
+                    let streamId = ntohl(bytes.export32Bits())
+                    let errorCode = ntohl(bytes.export32Bits())
+                    var message = ""
+                    if bytes.availableExportBytes > 0 {
+                        message = UTF8Encoding.encode(bytes.exportBytes(bytes.availableExportBytes))
+                    }
+                    let bytes2 = Bytes(initialSize: 8)
+                    bytes2.import32Bits(htonl(streamId))
+                    bytes2.import32Bits(0)
+                    let frame2 = HTTP2Frame(length: 8, type: HTTP2_GOAWAY, flags: 9, streamId: streamId, payload: bytes2.data)
+                    self.writeHTTP2Frame(frame2) {
+                        [unowned self] b in
+                        self.close()
+                    }
+                    callback(nil, "\(errorCode) \(message)")
+                    streamOpen = false
+                case HTTP2_HEADERS:
+                    let padded = (frame.flags & HTTP2_PADDED) != 0
+//                    let priority = (frame.flags & HTTP2_PRIORITY) != 0
+//                    let end = (frame.flags & HTTP2_END_HEADERS) != 0
+                    if let ba = frame.payload where ba.count > 0 {
+                        let bytes = Bytes(existingBytes: ba)
+                        var padLength = UInt8(0)
+                        //										var streamDep = UInt32(0)
+                        //										var weight = UInt8(0)
+                        if padded {
+                            padLength = bytes.export8Bits()
+                        }
+                        //										if priority {
+                        //											streamDep = bytes.export32Bits()
+                        //											weight = bytes.export8Bits()
+                        //										}
+                        self.decodeHeaders(bytes, endPosition: ba.count - Int(padLength), listener: response)
+                    }
+                    streamOpen = (frame.flags & HTTP2_END_STREAM) == 0
+                    if !streamOpen {
+                        callback(response, nil)
+                    }
+                case HTTP2_DATA:
+                    if frame.length > 0 {
+                        response.bodyData.appendContentsOf(frame.payload!)
+                    }
+                    streamOpen = (frame.flags & HTTP2_END_STREAM) == 0
+                    if !streamOpen {
+                        callback(response, nil)
+                    }
+                default:
+                    streamOpen = false
+                    callback(nil, "Unexpected frame type \(frame.typeStr)")
+                }
+            }
+            else {
+                self.close()
+                streamOpen = false
+                callback(nil, "Connection dropped")
+            }
+        }
+    }
+    
+    public func sendRequest(request: WebRequest, callback: (WebResponse?, String?) -> Void) {
+        let streamId = self.newStreamId
+        self.streams[streamId] = .Idle
+        let headerBytes = Bytes()
+        let method = request.requestMethod()
+        let scheme = ssl ? "https" : "http"
+        let path = request.requestURI()
         
+        do {
+            try encoder.encodeHeader(headerBytes, name: ":method", value: method)
+            try encoder.encodeHeader(headerBytes, name: ":scheme", value: scheme)
+            try encoder.encodeHeader(headerBytes, name: ":path", value: path, sensitive: false, incrementalIndexing: false)
+            try encoder.encodeHeader(headerBytes, name: "host", value: self.host)
+            try encoder.encodeHeader(headerBytes, name: "content-length", value: "\(request.postBodyBytes.count)")
+            
+            for (name, value) in request.headers {
+                let lowered = name.lowercaseString
+                var inc = true
+                
+                // this is APNS specific in that apple wants the apns-id and apns-expiration headers to be indexed on the first request but not indexed on subsequent requests
+                // nedd to enable the caler to indicate policies such as this prolicies such as this 
+                let n = UTF8Encoding.decode(lowered)
+                let v = UTF8Encoding.decode(value)
+                if streamId > 1 {
+                    // at least the second request 
+                    inc = !(lowered == "apns-id" || lowered == "apns-expiration")
+                }
+                try encoder.encodeHeader(headerBytes, name: n, value: v, sensitive: false, incrementalIndexing: inc)
+            }
+        } catch {
+            callback(nil, "Header encoding exception \(error)")
+            return
+        }
+        
+        let hasData = request.postBodyBytes.count > 0
+        let frame = HTTP2Frame(length: UInt32(headerBytes.data.count), type: HTTP2_HEADERS, flags: HTTP2_END_HEADERS | (hasData ? 0 : HTTP2_END_STREAM), streamId: streamId, payload: headerBytes.data)
+        self.writeHTTP2Frame(frame) {
+            [weak self] b in
+            guard b
+                else {
+                    callback(nil, "unable to write frame")
+                    return
+            }
+            guard let s = self
+            else {
+                callback(nil, nil)
+                return
+            }
+            s.streams[streamId] = .Open
+            if hasData {
+                let frame2 = HTTP2Frame(length: UInt32(request.postBodyBytes.count), type: HTTP2_DATA, flags: HTTP2_END_STREAM, streamId: streamId, payload: request.postBodyBytes)
+                s.writeHTTP2Frame(frame2) {
+                    [weak self] b in
+                    guard let s = self
+                        else {
+                            callback(nil, nil)
+                            return
+                    }
+                    s.awaitResponse(streamId, request: request, callback: callback)
+                }
+            }
+            else {
+                s.awaitResponse(streamId, request: request, callback: callback)
+            }
+        }
     }
     
     func bytesToHeader(b: [UInt8]) -> HTTP2Frame {
