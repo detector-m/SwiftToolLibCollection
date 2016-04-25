@@ -47,6 +47,8 @@
 		DE2DAB371CCC70BC007409D1 /* WebSocketHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB361CCC70BC007409D1 /* WebSocketHandler.swift */; };
 		DE2DAB391CCCC782007409D1 /* NotificationPusher.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB381CCCC782007409D1 /* NotificationPusher.swift */; };
 		DE2DAB3B1CCCD209007409D1 /* HTTPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB3A1CCCD209007409D1 /* HTTPServer.swift */; };
+		DE2DAB3D1CCCF6F9007409D1 /* HPACK.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB3C1CCCF6F9007409D1 /* HPACK.swift */; };
+		DE2DAB3F1CCE03C4007409D1 /* HTTP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB3E1CCE03C4007409D1 /* HTTP2.swift */; };
 		DE4B3B8B1CBE7ADE0024F9A9 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8A1CBE7ADE0024F9A9 /* File.swift */; };
 		DE4B3B8D1CBE82050024F9A9 /* PerfectError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */; };
 		DE4B3B8E1CBE82050024F9A9 /* PerfectError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */; };
@@ -131,6 +133,8 @@
 		DE2DAB361CCC70BC007409D1 /* WebSocketHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebSocketHandler.swift; sourceTree = "<group>"; };
 		DE2DAB381CCCC782007409D1 /* NotificationPusher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationPusher.swift; sourceTree = "<group>"; };
 		DE2DAB3A1CCCD209007409D1 /* HTTPServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPServer.swift; sourceTree = "<group>"; };
+		DE2DAB3C1CCCF6F9007409D1 /* HPACK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPACK.swift; sourceTree = "<group>"; };
+		DE2DAB3E1CCE03C4007409D1 /* HTTP2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP2.swift; sourceTree = "<group>"; };
 		DE4B3B8A1CBE7ADE0024F9A9 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectError.swift; sourceTree = "<group>"; };
 		DE4B3B901CBF6F090024F9A9 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
@@ -303,6 +307,8 @@
 				DE2DAB361CCC70BC007409D1 /* WebSocketHandler.swift */,
 				DE2DAB381CCCC782007409D1 /* NotificationPusher.swift */,
 				DE2DAB3A1CCCD209007409D1 /* HTTPServer.swift */,
+				DE2DAB3C1CCCF6F9007409D1 /* HPACK.swift */,
+				DE2DAB3E1CCE03C4007409D1 /* HTTP2.swift */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -515,6 +521,7 @@
 				DE4B3B8B1CBE7ADE0024F9A9 /* File.swift in Sources */,
 				DE2DAB0D1CC6319D007409D1 /* NetTCP.swift in Sources */,
 				DE2DAB311CCA2BDA007409D1 /* PerfectServer.swift in Sources */,
+				DE2DAB3F1CCE03C4007409D1 /* HTTP2.swift in Sources */,
 				DEA23EAC1CBDE77C00DAA10E /* cURL.swift in Sources */,
 				DE4B3B941CBF782A0024F9A9 /* DynamicLoader.swift in Sources */,
 				DE2DAB2F1CCA20CF007409D1 /* SessionManager.swift in Sources */,
@@ -530,6 +537,7 @@
 				DEA23EB91CBE192F00DAA10E /* Utilities.swift in Sources */,
 				DE2DAB2D1CC9CCD3007409D1 /* WebResponse.swift in Sources */,
 				DE2DAB0B1CC62DB2007409D1 /* Net.swift in Sources */,
+				DE2DAB3D1CCCF6F9007409D1 /* HPACK.swift in Sources */,
 				DE2DAB391CCCC782007409D1 /* NotificationPusher.swift in Sources */,
 				DE2DAAF11CBFD336007409D1 /* SysProcess.swift in Sources */,
 				DE2DAB211CC8B555007409D1 /* util.c in Sources */,
