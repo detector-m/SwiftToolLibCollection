@@ -50,7 +50,7 @@ class DynamicTable {
     var size = 0
     var capacity = -1 {
         didSet {
-            self.
+            self.capacityChanged(oldValue)
         }
     }
     
@@ -595,7 +595,7 @@ class HuffmanEncoder {
         return o
     }
     
-    func encode(out: Bytes, input: Bytes) throws -> Bytes {
+    func encode(out: Bytes, input: Bytes) throws {
         var current = 0
         var n = 0
         
@@ -1453,8 +1453,6 @@ public class HPACKDecoder {
                 if valueLength == 0 {
                     state = .ReadHeaderRepresentation
                 }
-            default:
-                break
             }
         }
     }

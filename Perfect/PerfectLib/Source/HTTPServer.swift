@@ -598,6 +598,7 @@ public class HTTPServer {
                     else {
                         // malformed header
                         callback(false)
+                        return
                 }
                 if lastWasCr {
                     // and c is LF

@@ -49,6 +49,7 @@
 		DE2DAB3B1CCCD209007409D1 /* HTTPServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB3A1CCCD209007409D1 /* HTTPServer.swift */; };
 		DE2DAB3D1CCCF6F9007409D1 /* HPACK.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB3C1CCCF6F9007409D1 /* HPACK.swift */; };
 		DE2DAB3F1CCE03C4007409D1 /* HTTP2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE2DAB3E1CCE03C4007409D1 /* HTTP2.swift */; };
+		DE2DAB411CCE6913007409D1 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE2DAB401CCE6913007409D1 /* libsqlite3.tbd */; };
 		DE4B3B8B1CBE7ADE0024F9A9 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8A1CBE7ADE0024F9A9 /* File.swift */; };
 		DE4B3B8D1CBE82050024F9A9 /* PerfectError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */; };
 		DE4B3B8E1CBE82050024F9A9 /* PerfectError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */; };
@@ -135,6 +136,7 @@
 		DE2DAB3A1CCCD209007409D1 /* HTTPServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPServer.swift; sourceTree = "<group>"; };
 		DE2DAB3C1CCCF6F9007409D1 /* HPACK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HPACK.swift; sourceTree = "<group>"; };
 		DE2DAB3E1CCE03C4007409D1 /* HTTP2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTP2.swift; sourceTree = "<group>"; };
+		DE2DAB401CCE6913007409D1 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		DE4B3B8A1CBE7ADE0024F9A9 /* File.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectError.swift; sourceTree = "<group>"; };
 		DE4B3B901CBF6F090024F9A9 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE2DAB411CCE6913007409D1 /* libsqlite3.tbd in Frameworks */,
 				DE2DAB051CC0A629007409D1 /* libc++.tbd in Frameworks */,
 				DE2DAAFE1CC0A05E007409D1 /* libicui18n.a in Frameworks */,
 				DE2DAAFF1CC0A05E007409D1 /* libicuuc.a in Frameworks */,
@@ -316,6 +319,7 @@
 		DEA23EAE1CBDE7C000DAA10E /* Linked */ = {
 			isa = PBXGroup;
 			children = (
+				DE2DAB401CCE6913007409D1 /* libsqlite3.tbd */,
 				DE2DAB041CC0A629007409D1 /* libc++.tbd */,
 				DE2DAB001CC0A587007409D1 /* libevent_pthreads.a */,
 				DE2DAB011CC0A587007409D1 /* libevent.a */,
