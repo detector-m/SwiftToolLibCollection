@@ -58,8 +58,14 @@
 		DE4B3B921CBF6F090024F9A9 /* LogManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B901CBF6F090024F9A9 /* LogManager.swift */; };
 		DE4B3B941CBF782A0024F9A9 /* DynamicLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B931CBF782A0024F9A9 /* DynamicLoader.swift */; };
 		DE4B3B951CBF782A0024F9A9 /* DynamicLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4B3B931CBF782A0024F9A9 /* DynamicLoader.swift */; };
+		DE4C7A8E1CD1FDF2001B4059 /* AJAXObjectDriver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C7A8D1CD1FDF2001B4059 /* AJAXObjectDriver.swift */; };
+		DE4C7A961CD1FE1C001B4059 /* PerfectObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C7A931CD1FE1C001B4059 /* PerfectObject.swift */; };
+		DE4C7A971CD1FE1C001B4059 /* PerfectObjectHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C7A941CD1FE1C001B4059 /* PerfectObjectHandler.swift */; };
+		DE4C7A981CD1FE1C001B4059 /* RWLockCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C7A951CD1FE1C001B4059 /* RWLockCache.swift */; };
+		DE4C7AA31CD21621001B4059 /* LinuxBridge.c in Sources */ = {isa = PBXBuildFile; fileRef = DE4C7AA11CD21621001B4059 /* LinuxBridge.c */; };
+		DE4C7AA41CD21621001B4059 /* LinuxBridge.h in Headers */ = {isa = PBXBuildFile; fileRef = DE4C7AA21CD21621001B4059 /* LinuxBridge.h */; };
 		DEA23A141CBD213900DAA10E /* PerfectLib.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA23A131CBD213900DAA10E /* PerfectLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DEA23A1B1CBD213A00DAA10E /* PerfectLib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA23A101CBD213900DAA10E /* PerfectLib.framework */; };
+		DEA23A1B1CBD213A00DAA10E /* PerfectLibOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA23A101CBD213900DAA10E /* PerfectLibOSX.framework */; };
 		DEA23A201CBD213B00DAA10E /* PerfectLibTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEA23A1F1CBD213B00DAA10E /* PerfectLibTests.swift */; };
 		DEA23E901CBDE67E00DAA10E /* PerfectLibiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = DEA23E8F1CBDE67E00DAA10E /* PerfectLibiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DEA23E971CBDE67F00DAA10E /* PerfectLibiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEA23E8D1CBDE67D00DAA10E /* PerfectLibiOS.framework */; };
@@ -141,7 +147,13 @@
 		DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectError.swift; sourceTree = "<group>"; };
 		DE4B3B901CBF6F090024F9A9 /* LogManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogManager.swift; sourceTree = "<group>"; };
 		DE4B3B931CBF782A0024F9A9 /* DynamicLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicLoader.swift; sourceTree = "<group>"; };
-		DEA23A101CBD213900DAA10E /* PerfectLib.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PerfectLib.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE4C7A8D1CD1FDF2001B4059 /* AJAXObjectDriver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AJAXObjectDriver.swift; sourceTree = "<group>"; };
+		DE4C7A931CD1FE1C001B4059 /* PerfectObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectObject.swift; sourceTree = "<group>"; };
+		DE4C7A941CD1FE1C001B4059 /* PerfectObjectHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfectObjectHandler.swift; sourceTree = "<group>"; };
+		DE4C7A951CD1FE1C001B4059 /* RWLockCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RWLockCache.swift; sourceTree = "<group>"; };
+		DE4C7AA11CD21621001B4059 /* LinuxBridge.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = LinuxBridge.c; sourceTree = "<group>"; };
+		DE4C7AA21CD21621001B4059 /* LinuxBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinuxBridge.h; sourceTree = "<group>"; };
+		DEA23A101CBD213900DAA10E /* PerfectLibOSX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PerfectLibOSX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DEA23A131CBD213900DAA10E /* PerfectLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PerfectLib.h; sourceTree = "<group>"; };
 		DEA23A151CBD213A00DAA10E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEA23A1A1CBD213A00DAA10E /* PerfectLibTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PerfectLibTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -185,7 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DEA23A1B1CBD213A00DAA10E /* PerfectLib.framework in Frameworks */,
+				DEA23A1B1CBD213A00DAA10E /* PerfectLibOSX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,6 +221,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DE4C7A8C1CD1FDCD001B4059 /* NoFlag */ = {
+			isa = PBXGroup;
+			children = (
+				DE4C7AA11CD21621001B4059 /* LinuxBridge.c */,
+				DE4C7AA21CD21621001B4059 /* LinuxBridge.h */,
+				DE4C7A8D1CD1FDF2001B4059 /* AJAXObjectDriver.swift */,
+				DE4C7A931CD1FE1C001B4059 /* PerfectObject.swift */,
+				DE4C7A941CD1FE1C001B4059 /* PerfectObjectHandler.swift */,
+				DE4C7A951CD1FE1C001B4059 /* RWLockCache.swift */,
+			);
+			name = NoFlag;
+			sourceTree = "<group>";
+		};
 		DEA23A061CBD213800DAA10E = {
 			isa = PBXGroup;
 			children = (
@@ -225,7 +250,7 @@
 		DEA23A111CBD213900DAA10E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DEA23A101CBD213900DAA10E /* PerfectLib.framework */,
+				DEA23A101CBD213900DAA10E /* PerfectLibOSX.framework */,
 				DEA23A1A1CBD213A00DAA10E /* PerfectLibTests.xctest */,
 				DEA23E8D1CBDE67D00DAA10E /* PerfectLibiOS.framework */,
 				DEA23E961CBDE67F00DAA10E /* PerfectLibiOSTests.xctest */,
@@ -272,6 +297,7 @@
 		DEA23EA41CBDE77C00DAA10E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DE4C7A8C1CD1FDCD001B4059 /* NoFlag */,
 				DE2DAB1E1CC8B50E007409D1 /* curl_support.cpp */,
 				DE2DAB201CC8B555007409D1 /* util.c */,
 				DE4B3B8C1CBE82050024F9A9 /* PerfectError.swift */,
@@ -342,6 +368,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE4C7AA41CD21621001B4059 /* LinuxBridge.h in Headers */,
 				DEA23A141CBD213900DAA10E /* PerfectLib.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,9 +384,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		DEA23A0F1CBD213900DAA10E /* PerfectLib */ = {
+		DEA23A0F1CBD213900DAA10E /* PerfectLibOSX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DEA23A241CBD213B00DAA10E /* Build configuration list for PBXNativeTarget "PerfectLib" */;
+			buildConfigurationList = DEA23A241CBD213B00DAA10E /* Build configuration list for PBXNativeTarget "PerfectLibOSX" */;
 			buildPhases = (
 				DEA23A0B1CBD213900DAA10E /* Sources */,
 				DEA23A0C1CBD213900DAA10E /* Frameworks */,
@@ -370,9 +397,9 @@
 			);
 			dependencies = (
 			);
-			name = PerfectLib;
+			name = PerfectLibOSX;
 			productName = PerfectLib;
-			productReference = DEA23A101CBD213900DAA10E /* PerfectLib.framework */;
+			productReference = DEA23A101CBD213900DAA10E /* PerfectLibOSX.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		DEA23A191CBD213A00DAA10E /* PerfectLibTests */ = {
@@ -465,7 +492,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DEA23A0F1CBD213900DAA10E /* PerfectLib */,
+				DEA23A0F1CBD213900DAA10E /* PerfectLibOSX */,
 				DEA23A191CBD213A00DAA10E /* PerfectLibTests */,
 				DEA23E8C1CBDE67D00DAA10E /* PerfectLibiOS */,
 				DEA23E951CBDE67F00DAA10E /* PerfectLibiOSTests */,
@@ -516,23 +543,27 @@
 				DE2DAB271CC8B735007409D1 /* SQLite.swift in Sources */,
 				DE2DAB291CC9083E007409D1 /* WebConnection.swift in Sources */,
 				DE2DAB111CC76FD6007409D1 /* NetTCPSSL.swift in Sources */,
+				DE4C7A8E1CD1FDF2001B4059 /* AJAXObjectDriver.swift in Sources */,
 				DE2DAB371CCC70BC007409D1 /* WebSocketHandler.swift in Sources */,
 				DE4B3B911CBF6F090024F9A9 /* LogManager.swift in Sources */,
 				DEA23EAA1CBDE77C00DAA10E /* Closeable.swift in Sources */,
 				DE2DAAF31CC07825007409D1 /* JSON.swift in Sources */,
 				DE2DAB1B1CC86C63007409D1 /* MimeType.swift in Sources */,
+				DE4C7AA31CD21621001B4059 /* LinuxBridge.c in Sources */,
 				DE2DAB091CC10BCE007409D1 /* JSONConvertible.swift in Sources */,
 				DE4B3B8B1CBE7ADE0024F9A9 /* File.swift in Sources */,
 				DE2DAB0D1CC6319D007409D1 /* NetTCP.swift in Sources */,
 				DE2DAB311CCA2BDA007409D1 /* PerfectServer.swift in Sources */,
 				DE2DAB3F1CCE03C4007409D1 /* HTTP2.swift in Sources */,
 				DEA23EAC1CBDE77C00DAA10E /* cURL.swift in Sources */,
+				DE4C7A961CD1FE1C001B4059 /* PerfectObject.swift in Sources */,
 				DE4B3B941CBF782A0024F9A9 /* DynamicLoader.swift in Sources */,
 				DE2DAB2F1CCA20CF007409D1 /* SessionManager.swift in Sources */,
 				DE2DAB1F1CC8B50E007409D1 /* curl_support.cpp in Sources */,
 				DE4B3B8D1CBE82050024F9A9 /* PerfectError.swift in Sources */,
 				DE2DAB231CC8B6A5007409D1 /* FastCGI.swift in Sources */,
 				DE2DAB191CC8604E007409D1 /* Mustache.swift in Sources */,
+				DE4C7A971CD1FE1C001B4059 /* PerfectObjectHandler.swift in Sources */,
 				DE2DAB171CC77090007409D1 /* NetNamedPipe.swift in Sources */,
 				DE2DAB251CC8B6B4007409D1 /* FastCGIServer.swift in Sources */,
 				DE2DAB0F1CC66759007409D1 /* LibEvent.swift in Sources */,
@@ -546,6 +577,7 @@
 				DE2DAAF11CBFD336007409D1 /* SysProcess.swift in Sources */,
 				DE2DAB211CC8B555007409D1 /* util.c in Sources */,
 				DE2DAAF51CC09159007409D1 /* ICU.swift in Sources */,
+				DE4C7A981CD1FE1C001B4059 /* RWLockCache.swift in Sources */,
 				DE2DAB1D1CC86D89007409D1 /* MimeReader.swift in Sources */,
 				DEA23EB61CBE170300DAA10E /* Dir.swift in Sources */,
 				DE2DAB071CC0BE10007409D1 /* Utilities+Server.swift in Sources */,
@@ -592,7 +624,7 @@
 /* Begin PBXTargetDependency section */
 		DEA23A1D1CBD213A00DAA10E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DEA23A0F1CBD213900DAA10E /* PerfectLib */;
+			target = DEA23A0F1CBD213900DAA10E /* PerfectLibOSX */;
 			targetProxy = DEA23A1C1CBD213A00DAA10E /* PBXContainerItemProxy */;
 		};
 		DEA23E991CBDE67F00DAA10E /* PBXTargetDependency */ = {
@@ -712,6 +744,7 @@
 					"$(PROJECT_DIR)/linked/LibEvent/osx",
 					"$(PROJECT_DIR)/linked/OpenSSL/osx",
 				);
+				MODULEMAP_PRIVATE_FILE = "$(SRCROOT)/OSX/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.riven.PerfectLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -738,6 +771,7 @@
 					"$(PROJECT_DIR)/linked/LibEvent/osx",
 					"$(PROJECT_DIR)/linked/OpenSSL/osx",
 				);
+				MODULEMAP_PRIVATE_FILE = "$(SRCROOT)/OSX/module.modulemap";
 				PRODUCT_BUNDLE_IDENTIFIER = com.riven.PerfectLib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -854,7 +888,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DEA23A241CBD213B00DAA10E /* Build configuration list for PBXNativeTarget "PerfectLib" */ = {
+		DEA23A241CBD213B00DAA10E /* Build configuration list for PBXNativeTarget "PerfectLibOSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DEA23A251CBD213B00DAA10E /* Debug */,

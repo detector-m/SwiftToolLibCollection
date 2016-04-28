@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:PerfectLib/Connectors/PostgreSQL/PostgreSQL.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:PerfectLib/Connectors/Mod_perfect/Mod_perfect.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:PerfectLib/Connectors/MongoDB/MongoDB.xcodeproj">
    </FileRef>
    <FileRef

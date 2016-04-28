@@ -1,0 +1,461 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DE1603491CD1E73D0074C0C1 /* PostgreSQL.h in Headers */ = {isa = PBXBuildFile; fileRef = DE1603481CD1E73D0074C0C1 /* PostgreSQL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DE1603501CD1E73D0074C0C1 /* PostgreSQL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1603451CD1E73D0074C0C1 /* PostgreSQL.framework */; };
+		DE1603551CD1E73D0074C0C1 /* PostgreSQLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1603541CD1E73D0074C0C1 /* PostgreSQLTests.swift */; };
+		DE1603621CD1E7B30074C0C1 /* libpq.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1603611CD1E7B30074C0C1 /* libpq.a */; };
+		DE1603641CD1E7D40074C0C1 /* libgssapi_krb5.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1603631CD1E7D40074C0C1 /* libgssapi_krb5.tbd */; };
+		DE1603661CD1E7E20074C0C1 /* libldap.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1603651CD1E7E20074C0C1 /* libldap.tbd */; };
+		DE1603681CD1E7ED0074C0C1 /* libcrypto.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1603671CD1E7ED0074C0C1 /* libcrypto.tbd */; };
+		DE16036A1CD1E7F30074C0C1 /* libssl.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1603691CD1E7F30074C0C1 /* libssl.tbd */; };
+		DE4C7A881CD1E981001B4059 /* PostgreSQL.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C7A871CD1E981001B4059 /* PostgreSQL.swift */; };
+		DE4C7A9A1CD205AB001B4059 /* PGLassoObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE4C7A991CD205AB001B4059 /* PGLassoObject.swift */; };
+		DE4C7AA01CD212BE001B4059 /* PerfectLibOSX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE4C7A9F1CD212BE001B4059 /* PerfectLibOSX.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DE1603511CD1E73D0074C0C1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DE16033C1CD1E73D0074C0C1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DE1603441CD1E73D0074C0C1;
+			remoteInfo = PostgreSQL;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DE1603451CD1E73D0074C0C1 /* PostgreSQL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PostgreSQL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1603481CD1E73D0074C0C1 /* PostgreSQL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostgreSQL.h; sourceTree = "<group>"; };
+		DE16034A1CD1E73D0074C0C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE16034F1CD1E73D0074C0C1 /* PostgreSQLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostgreSQLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DE1603541CD1E73D0074C0C1 /* PostgreSQLTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostgreSQLTests.swift; sourceTree = "<group>"; };
+		DE1603561CD1E73D0074C0C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE1603611CD1E7B30074C0C1 /* libpq.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libpq.a; path = linked/libpq/osx/libpq.a; sourceTree = "<group>"; };
+		DE1603631CD1E7D40074C0C1 /* libgssapi_krb5.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libgssapi_krb5.tbd; path = usr/lib/libgssapi_krb5.tbd; sourceTree = SDKROOT; };
+		DE1603651CD1E7E20074C0C1 /* libldap.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libldap.tbd; path = usr/lib/libldap.tbd; sourceTree = SDKROOT; };
+		DE1603671CD1E7ED0074C0C1 /* libcrypto.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcrypto.tbd; path = usr/lib/libcrypto.tbd; sourceTree = SDKROOT; };
+		DE1603691CD1E7F30074C0C1 /* libssl.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libssl.tbd; path = usr/lib/libssl.tbd; sourceTree = SDKROOT; };
+		DE4C7A871CD1E981001B4059 /* PostgreSQL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostgreSQL.swift; sourceTree = "<group>"; };
+		DE4C7A991CD205AB001B4059 /* PGLassoObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PGLassoObject.swift; sourceTree = "<group>"; };
+		DE4C7A9F1CD212BE001B4059 /* PerfectLibOSX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PerfectLibOSX.framework; path = "../../../../../../../Library/Developer/Xcode/DerivedData/Perfect-buswxscbttqcebeaulihybcxirjt/Build/Products/Debug/PerfectLibOSX.framework"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DE1603411CD1E73D0074C0C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE4C7AA01CD212BE001B4059 /* PerfectLibOSX.framework in Frameworks */,
+				DE16036A1CD1E7F30074C0C1 /* libssl.tbd in Frameworks */,
+				DE1603681CD1E7ED0074C0C1 /* libcrypto.tbd in Frameworks */,
+				DE1603661CD1E7E20074C0C1 /* libldap.tbd in Frameworks */,
+				DE1603641CD1E7D40074C0C1 /* libgssapi_krb5.tbd in Frameworks */,
+				DE1603621CD1E7B30074C0C1 /* libpq.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE16034C1CD1E73D0074C0C1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE1603501CD1E73D0074C0C1 /* PostgreSQL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DE16033B1CD1E73D0074C0C1 = {
+			isa = PBXGroup;
+			children = (
+				DE1603471CD1E73D0074C0C1 /* PostgreSQL */,
+				DE1603531CD1E73D0074C0C1 /* PostgreSQLTests */,
+				DE1603461CD1E73D0074C0C1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DE1603461CD1E73D0074C0C1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE1603451CD1E73D0074C0C1 /* PostgreSQL.framework */,
+				DE16034F1CD1E73D0074C0C1 /* PostgreSQLTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DE1603471CD1E73D0074C0C1 /* PostgreSQL */ = {
+			isa = PBXGroup;
+			children = (
+				DE1603601CD1E7990074C0C1 /* Linked */,
+				DE16035F1CD1E7940074C0C1 /* Source */,
+				DE1603481CD1E73D0074C0C1 /* PostgreSQL.h */,
+				DE16034A1CD1E73D0074C0C1 /* Info.plist */,
+			);
+			path = PostgreSQL;
+			sourceTree = "<group>";
+		};
+		DE1603531CD1E73D0074C0C1 /* PostgreSQLTests */ = {
+			isa = PBXGroup;
+			children = (
+				DE1603541CD1E73D0074C0C1 /* PostgreSQLTests.swift */,
+				DE1603561CD1E73D0074C0C1 /* Info.plist */,
+			);
+			path = PostgreSQLTests;
+			sourceTree = "<group>";
+		};
+		DE16035F1CD1E7940074C0C1 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				DE4C7A871CD1E981001B4059 /* PostgreSQL.swift */,
+				DE4C7A991CD205AB001B4059 /* PGLassoObject.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		DE1603601CD1E7990074C0C1 /* Linked */ = {
+			isa = PBXGroup;
+			children = (
+				DE4C7A9F1CD212BE001B4059 /* PerfectLibOSX.framework */,
+				DE1603691CD1E7F30074C0C1 /* libssl.tbd */,
+				DE1603671CD1E7ED0074C0C1 /* libcrypto.tbd */,
+				DE1603651CD1E7E20074C0C1 /* libldap.tbd */,
+				DE1603631CD1E7D40074C0C1 /* libgssapi_krb5.tbd */,
+				DE1603611CD1E7B30074C0C1 /* libpq.a */,
+			);
+			name = Linked;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		DE1603421CD1E73D0074C0C1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE1603491CD1E73D0074C0C1 /* PostgreSQL.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		DE1603441CD1E73D0074C0C1 /* PostgreSQL */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE1603591CD1E73D0074C0C1 /* Build configuration list for PBXNativeTarget "PostgreSQL" */;
+			buildPhases = (
+				DE1603401CD1E73D0074C0C1 /* Sources */,
+				DE1603411CD1E73D0074C0C1 /* Frameworks */,
+				DE1603421CD1E73D0074C0C1 /* Headers */,
+				DE1603431CD1E73D0074C0C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PostgreSQL;
+			productName = PostgreSQL;
+			productReference = DE1603451CD1E73D0074C0C1 /* PostgreSQL.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DE16034E1CD1E73D0074C0C1 /* PostgreSQLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE16035C1CD1E73D0074C0C1 /* Build configuration list for PBXNativeTarget "PostgreSQLTests" */;
+			buildPhases = (
+				DE16034B1CD1E73D0074C0C1 /* Sources */,
+				DE16034C1CD1E73D0074C0C1 /* Frameworks */,
+				DE16034D1CD1E73D0074C0C1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DE1603521CD1E73D0074C0C1 /* PBXTargetDependency */,
+			);
+			name = PostgreSQLTests;
+			productName = PostgreSQLTests;
+			productReference = DE16034F1CD1E73D0074C0C1 /* PostgreSQLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DE16033C1CD1E73D0074C0C1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = Riven;
+				TargetAttributes = {
+					DE1603441CD1E73D0074C0C1 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					DE16034E1CD1E73D0074C0C1 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = DE16033F1CD1E73D0074C0C1 /* Build configuration list for PBXProject "PostgreSQL" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = DE16033B1CD1E73D0074C0C1;
+			productRefGroup = DE1603461CD1E73D0074C0C1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DE1603441CD1E73D0074C0C1 /* PostgreSQL */,
+				DE16034E1CD1E73D0074C0C1 /* PostgreSQLTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DE1603431CD1E73D0074C0C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE16034D1CD1E73D0074C0C1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DE1603401CD1E73D0074C0C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE4C7A9A1CD205AB001B4059 /* PGLassoObject.swift in Sources */,
+				DE4C7A881CD1E981001B4059 /* PostgreSQL.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DE16034B1CD1E73D0074C0C1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DE1603551CD1E73D0074C0C1 /* PostgreSQLTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DE1603521CD1E73D0074C0C1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DE1603441CD1E73D0074C0C1 /* PostgreSQL */;
+			targetProxy = DE1603511CD1E73D0074C0C1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DE1603571CD1E73D0074C0C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DE1603581CD1E73D0074C0C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_INCLUDE_PATHS = "";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DE16035A1CD1E73D0074C0C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = PostgreSQL/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PostgreSQL/linked/libpq/osx",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.riven.PostgreSQL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/PostgreSQL/linked/libpq";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DE16035B1CD1E73D0074C0C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = PostgreSQL/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/PostgreSQL/linked/libpq/osx",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.riven.PostgreSQL;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_INCLUDE_PATHS = "${SRCROOT}/PostgreSQL/linked/libpq";
+			};
+			name = Release;
+		};
+		DE16035D1CD1E73D0074C0C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PostgreSQLTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.riven.PostgreSQLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DE16035E1CD1E73D0074C0C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = PostgreSQLTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.riven.PostgreSQLTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DE16033F1CD1E73D0074C0C1 /* Build configuration list for PBXProject "PostgreSQL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE1603571CD1E73D0074C0C1 /* Debug */,
+				DE1603581CD1E73D0074C0C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE1603591CD1E73D0074C0C1 /* Build configuration list for PBXNativeTarget "PostgreSQL" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE16035A1CD1E73D0074C0C1 /* Debug */,
+				DE16035B1CD1E73D0074C0C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DE16035C1CD1E73D0074C0C1 /* Build configuration list for PBXNativeTarget "PostgreSQLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DE16035D1CD1E73D0074C0C1 /* Debug */,
+				DE16035E1CD1E73D0074C0C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DE16033C1CD1E73D0074C0C1 /* Project object */;
+}
