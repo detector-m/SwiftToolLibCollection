@@ -10,6 +10,7 @@
 		DE1603301CD1E5B90074C0C1 /* Mod_perfect.hpp in Headers */ = {isa = PBXBuildFile; fileRef = DE16032F1CD1E5B90074C0C1 /* Mod_perfect.hpp */; };
 		DE1603321CD1E5B90074C0C1 /* Mod_perfectPriv.hpp in Headers */ = {isa = PBXBuildFile; fileRef = DE1603311CD1E5B90074C0C1 /* Mod_perfectPriv.hpp */; };
 		DE1603341CD1E5B90074C0C1 /* Mod_perfect.cpp in Sources */ = {isa = PBXBuildFile; fileRef = DE1603331CD1E5B90074C0C1 /* Mod_perfect.cpp */; };
+		DE4C7AA81CD30B9F001B4059 /* fastcgi.h in Headers */ = {isa = PBXBuildFile; fileRef = DE4C7AA51CD30B9F001B4059 /* fastcgi.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -17,6 +18,7 @@
 		DE16032F1CD1E5B90074C0C1 /* Mod_perfect.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mod_perfect.hpp; sourceTree = "<group>"; };
 		DE1603311CD1E5B90074C0C1 /* Mod_perfectPriv.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Mod_perfectPriv.hpp; sourceTree = "<group>"; };
 		DE1603331CD1E5B90074C0C1 /* Mod_perfect.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mod_perfect.cpp; sourceTree = "<group>"; };
+		DE4C7AA51CD30B9F001B4059 /* fastcgi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fastcgi.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 		DE16033A1CD1E5DC0074C0C1 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				DE4C7AA51CD30B9F001B4059 /* fastcgi.h */,
 				DE16032F1CD1E5B90074C0C1 /* Mod_perfect.hpp */,
 				DE1603311CD1E5B90074C0C1 /* Mod_perfectPriv.hpp */,
 				DE1603331CD1E5B90074C0C1 /* Mod_perfect.cpp */,
@@ -71,6 +74,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE4C7AA81CD30B9F001B4059 /* fastcgi.h in Headers */,
 				DE1603321CD1E5B90074C0C1 /* Mod_perfectPriv.hpp in Headers */,
 				DE1603301CD1E5B90074C0C1 /* Mod_perfect.hpp in Headers */,
 			);
@@ -229,6 +233,14 @@
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/include/apache2,
+					"/usr/include/apr-1",
+				);
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -242,6 +254,14 @@
 				GCC_ENABLE_CPP_EXCEPTIONS = YES;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
+				HEADER_SEARCH_PATHS = (
+					/usr/include/apache2,
+					"/usr/include/apr-1",
+				);
+				OTHER_LDFLAGS = (
+					"-undefined",
+					dynamic_lookup,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -265,6 +285,7 @@
 				DE1603391CD1E5B90074C0C1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
