@@ -22,6 +22,13 @@
 		DEB34AEE1CB4B3D800ECF99E /* SwiftToolLibCollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB34AED1CB4B3D800ECF99E /* SwiftToolLibCollectionTests.swift */; };
 		DEB34AFA1CB4B42100ECF99E /* Async.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEB34AF91CB4B42100ECF99E /* Async.swift */; };
 		DEEB46371CB4F896007DCD65 /* PathKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEEB46361CB4F896007DCD65 /* PathKit.swift */; };
+		DEFCD9AC1CE427500035AD5B /* ColorList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCD9AB1CE427500035AD5B /* ColorList.swift */; };
+		DEFCD9AE1CE427590035AD5B /* FontList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCD9AD1CE427590035AD5B /* FontList.swift */; };
+		DEFCD9B01CE428EB0035AD5B /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCD9AF1CE428EB0035AD5B /* Config.swift */; };
+		DEFCD9B21CE429410035AD5B /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCD9B11CE429410035AD5B /* Message.swift */; };
+		DEFCD9B41CE4665B0035AD5B /* ShoutFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCD9B31CE4665B0035AD5B /* ShoutFactory.swift */; };
+		DEFCD9B61CE575860035AD5B /* WhistleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCD9B51CE575860035AD5B /* WhistleFactory.swift */; };
+		DEFCD9B81CE5C9550035AD5B /* WhisperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEFCD9B71CE5C9550035AD5B /* WhisperView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +60,13 @@
 		DEB34AEF1CB4B3D800ECF99E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DEB34AF91CB4B42100ECF99E /* Async.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Async.swift; sourceTree = "<group>"; };
 		DEEB46361CB4F896007DCD65 /* PathKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathKit.swift; sourceTree = "<group>"; };
+		DEFCD9AB1CE427500035AD5B /* ColorList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorList.swift; sourceTree = "<group>"; };
+		DEFCD9AD1CE427590035AD5B /* FontList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontList.swift; sourceTree = "<group>"; };
+		DEFCD9AF1CE428EB0035AD5B /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		DEFCD9B11CE429410035AD5B /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		DEFCD9B31CE4665B0035AD5B /* ShoutFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShoutFactory.swift; sourceTree = "<group>"; };
+		DEFCD9B51CE575860035AD5B /* WhistleFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhistleFactory.swift; sourceTree = "<group>"; };
+		DEFCD9B71CE5C9550035AD5B /* WhisperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +140,7 @@
 		DEB34AE01CB4B3D800ECF99E /* SwiftToolLibCollection */ = {
 			isa = PBXGroup;
 			children = (
+				DEFCD9A91CE426F60035AD5B /* Whisper */,
 				DE1C7AD91CB6390E001CBEE2 /* Pantry */,
 				DE1C7AD61CB6007E001CBEE2 /* ExcuteDuration */,
 				DE1C7AD11CB5F7C3001CBEE2 /* RateLimit */,
@@ -160,6 +175,28 @@
 				DEEB46361CB4F896007DCD65 /* PathKit.swift */,
 			);
 			path = PathKit;
+			sourceTree = "<group>";
+		};
+		DEFCD9A91CE426F60035AD5B /* Whisper */ = {
+			isa = PBXGroup;
+			children = (
+				DEFCD9AA1CE4272A0035AD5B /* Configuration */,
+				DEFCD9AF1CE428EB0035AD5B /* Config.swift */,
+				DEFCD9B11CE429410035AD5B /* Message.swift */,
+				DEFCD9B31CE4665B0035AD5B /* ShoutFactory.swift */,
+				DEFCD9B51CE575860035AD5B /* WhistleFactory.swift */,
+				DEFCD9B71CE5C9550035AD5B /* WhisperView.swift */,
+			);
+			path = Whisper;
+			sourceTree = "<group>";
+		};
+		DEFCD9AA1CE4272A0035AD5B /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				DEFCD9AB1CE427500035AD5B /* ColorList.swift */,
+				DEFCD9AD1CE427590035AD5B /* FontList.swift */,
+			);
+			name = Configuration;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,14 +309,21 @@
 			files = (
 				DE1C7AD51CB5FC01001CBEE2 /* PersistentRateLimit.swift in Sources */,
 				DE1C7ADF1CB64246001CBEE2 /* Mirror+Serialization.swift in Sources */,
+				DEFCD9B01CE428EB0035AD5B /* Config.swift in Sources */,
+				DEFCD9B61CE575860035AD5B /* WhistleFactory.swift in Sources */,
 				DE1C7ADD1CB63CA4001CBEE2 /* Storable.swift in Sources */,
 				DE1C7ADB1CB639FF001CBEE2 /* Warehousable.swift in Sources */,
+				DEFCD9AE1CE427590035AD5B /* FontList.swift in Sources */,
 				DE1C7AE31CB64BD7001CBEE2 /* MemoryWarehouse.swift in Sources */,
 				DE1C7AE51CB652B1001CBEE2 /* JSONWarehouse.swift in Sources */,
 				DE1C7AD81CB60090001CBEE2 /* ExcuteDuration.swift in Sources */,
+				DEFCD9B81CE5C9550035AD5B /* WhisperView.swift in Sources */,
 				DE1C7AE11CB64B67001CBEE2 /* WarehouseCacheable.swift in Sources */,
+				DEFCD9AC1CE427500035AD5B /* ColorList.swift in Sources */,
 				DE1C7AD31CB5F803001CBEE2 /* RateLimit.swift in Sources */,
 				DE1C7AE71CB65BD8001CBEE2 /* Pantry.swift in Sources */,
+				DEFCD9B21CE429410035AD5B /* Message.swift in Sources */,
+				DEFCD9B41CE4665B0035AD5B /* ShoutFactory.swift in Sources */,
 				DEB34AFA1CB4B42100ECF99E /* Async.swift in Sources */,
 				DEEB46371CB4F896007DCD65 /* PathKit.swift in Sources */,
 			);
