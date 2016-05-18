@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DE154B5C1CEC097B00D9C920 /* WhisperFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE154B5B1CEC097B00D9C920 /* WhisperFactory.swift */; };
 		DE1C7AD31CB5F803001CBEE2 /* RateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7AD21CB5F803001CBEE2 /* RateLimit.swift */; };
 		DE1C7AD51CB5FC01001CBEE2 /* PersistentRateLimit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7AD41CB5FC01001CBEE2 /* PersistentRateLimit.swift */; };
 		DE1C7AD81CB60090001CBEE2 /* ExcuteDuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE1C7AD71CB60090001CBEE2 /* ExcuteDuration.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DE154B5B1CEC097B00D9C920 /* WhisperFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhisperFactory.swift; sourceTree = "<group>"; };
 		DE1C7AD21CB5F803001CBEE2 /* RateLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RateLimit.swift; sourceTree = "<group>"; };
 		DE1C7AD41CB5FC01001CBEE2 /* PersistentRateLimit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentRateLimit.swift; sourceTree = "<group>"; };
 		DE1C7AD71CB60090001CBEE2 /* ExcuteDuration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExcuteDuration.swift; sourceTree = "<group>"; };
@@ -186,6 +188,7 @@
 				DEFCD9B31CE4665B0035AD5B /* ShoutFactory.swift */,
 				DEFCD9B51CE575860035AD5B /* WhistleFactory.swift */,
 				DEFCD9B71CE5C9550035AD5B /* WhisperView.swift */,
+				DE154B5B1CEC097B00D9C920 /* WhisperFactory.swift */,
 			);
 			path = Whisper;
 			sourceTree = "<group>";
@@ -324,6 +327,7 @@
 				DE1C7AE71CB65BD8001CBEE2 /* Pantry.swift in Sources */,
 				DEFCD9B21CE429410035AD5B /* Message.swift in Sources */,
 				DEFCD9B41CE4665B0035AD5B /* ShoutFactory.swift in Sources */,
+				DE154B5C1CEC097B00D9C920 /* WhisperFactory.swift in Sources */,
 				DEB34AFA1CB4B42100ECF99E /* Async.swift in Sources */,
 				DEEB46371CB4F896007DCD65 /* PathKit.swift in Sources */,
 			);
